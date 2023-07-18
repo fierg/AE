@@ -3,6 +3,7 @@
 //
 #include <iostream>
 #include "int_stack.h"
+#include <stdexcept>
 
 int_stack::int_stack() {
     sz = 2; //auf 100 Elemente vordefniert
@@ -42,6 +43,12 @@ void int_stack::resize(int new_size) {
     A = new_array;
     sz = new_size;
 }
-int int_stack::pop() { return A[top--]; }
-int int_stack::getTop() const { return A[top]; }
+int int_stack::pop() {
+    if (top == -1) throw std::runtime_error("Stack leer.");
+    return A[top--];
+}
+int int_stack::getTop() const {
+    if (top == -1) throw std::runtime_error("Stack leer.");
+    return A[top];
+}
 bool int_stack::empty() const { return top == -1; }

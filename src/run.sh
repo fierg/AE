@@ -9,6 +9,17 @@ for dir in */; do
     if [ -f "CMakeLists.txt" ]; then
         echo "Processing directory: $dir"
 
+        # Check if the build folder exists
+        if [ -d "build" ]; then
+            echo "Build folder exists. Clearing it..."
+
+            # Remove the contents of the build folder
+            rm -rf "build"/*
+        else
+            echo "Build folder not found."
+        fi
+
+
         # Create a build directory and navigate into it
         mkdir -p build && cd build
 
