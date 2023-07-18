@@ -18,12 +18,14 @@ for dir in */; do
         # Compile the project with Make
         make
 
+        cmake --build .
+
         # Check if the executable exists
-        if [ -f "output_program" ]; then
+        if [ -f "run" ]; then
             echo "Running program..."
 
             # Run the output program
-            ./output_program
+            ./run
         else
             echo "Executable not found. Make sure the project compiled successfully."
         fi

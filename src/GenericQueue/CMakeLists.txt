@@ -4,7 +4,7 @@ project(build)
 set(CMAKE_CXX_STANDARD 14)
 
 
-add_executable(
+add_executable(run
         Queue.cpp
         main.cpp
         )
