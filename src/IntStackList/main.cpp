@@ -16,6 +16,8 @@ int main() {
     int popped = stack.pop();
     std::cout << "Popped element: " << popped << std::endl;
 
+    stack.push(5);
+
     std::cout << "Top element after popping: " << stack.getTop() << std::endl;
 
     stack.pop();

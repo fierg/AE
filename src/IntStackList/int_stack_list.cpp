@@ -11,6 +11,30 @@ int_stack::int_stack() { //Konstruktor
 int_stack::~int_stack() {
     while (!empty()) pop();
 }
+
+int_stack::int_stack(const int_stack &S) {
+    if (this == &S) return;
+    while (!empty()) pop();
+    stack_elem *elem = oberste;
+    while (elem != nullptr) {
+        push(elem->wert);
+        elem = elem->drunter;
+    }
+}
+
+int_stack &int_stack::operator=(const int_stack& S){
+    if (this == &S) return *this;
+    while (!empty()) pop();
+    while (!S.empty());
+    stack_elem *elem = oberste;
+    while (elem != nullptr) {
+        push(elem->wert);
+        elem = elem->drunter;
+    }
+    return *this;
+}
+
+
 int int_stack::pop() {
     if (oberste == nullptr){
         throw std::runtime_error("Stack leer.");

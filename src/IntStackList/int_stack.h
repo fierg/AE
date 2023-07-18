@@ -1,7 +1,6 @@
 //
 // Created by fierg on 7/18/23.
 //
-#include "stack_elem.cpp"
 #ifndef CODE_INT_STACK_H
 #define CODE_INT_STACK_H
 
@@ -10,6 +9,15 @@
 class int_stack{
 
 private:
+    struct stack_elem {
+    public:
+        stack_elem *drunter;
+        int wert;
+        stack_elem(int x, stack_elem *d) {
+            wert = x;
+            drunter = d;
+        }
+    };
     stack_elem *oberste;
 
 public:
