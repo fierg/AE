@@ -21,7 +21,6 @@ for dir in */; do
             echo "Build folder not found."
         fi
 
-
         # Create a build directory and navigate into it
         mkdir -p build && cd build
 
@@ -42,11 +41,7 @@ for dir in */; do
         else
             echo "Executable not found. Make sure the project compiled successfully."
         fi
-
-        # Return to the parent directory
         cd ..
     fi
-
-    # Return to the original directory
     cd ..
 done

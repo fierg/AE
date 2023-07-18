@@ -19,5 +19,9 @@ int main() {
 
     std::cout << "Is the queue empty? " << (queue.isEmpty() ? "Yes" : "No") << std::endl;
 
+    queue.dequeue();
+
+    std::cout << "Front element after dequeue: " << queue.getFront() << std::endl;
+
     return 0;
 }
