@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # Iterate over each directory in the current directory
+cd "src"
+
 for dir in */; do
     # Enter the directory
     cd "$dir"
