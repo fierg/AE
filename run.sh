@@ -25,7 +25,7 @@ for dir in */; do
         mkdir -p build && cd build
 
         # Run CMake to generate the build files
-        cmake ..
+        cmake -DCMAKE_RULE_MESSAGES=OFF --log-level=ERROR ..
 
         # Compile the project with Make
         make
