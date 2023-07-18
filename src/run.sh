@@ -13,7 +13,7 @@ for dir in */; do
         mkdir -p build && cd build
 
         # Run CMake to generate the build files
-        cmake .
+        cmake ..
 
         # Compile the project with Make
         make
